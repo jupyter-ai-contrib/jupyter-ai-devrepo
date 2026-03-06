@@ -28,9 +28,9 @@
 [submodule "jupyter-ai-acp-client"]
 	path = jupyter-ai-acp-client
 	url = git@github.com:jupyter-ai-contrib/jupyter-ai-acp-client.git
-[submodule "jupyter-ai-tools"]
-	path = jupyter-ai-tools
-	url = https://github.com/jupyter-ai-contrib/jupyter-ai-tools.git
 [submodule "jupyter-server-mcp"]
 	path = jupyter-server-mcp
-	url = https://github.com/jupyter-ai-contrib/jupyter-server-mcp.git
+	url = git@github.com:jupyter-ai-contrib/jupyter-server-mcp.git
+[submodule "jupyter-ai-tools"]
+	path = jupyter-ai-tools
+	url = git@github.com:jupyter-ai-contrib/jupyter-ai-tools.git

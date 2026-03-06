@@ -77,8 +77,8 @@ start:
 
 verify-in-submodule:
     #!/usr/bin/env bash
-    cdir={{invocation_directory()}}
-    rootdir={{justfile_directory()}}
+    cdir={{ invocation_directory() }}
+    rootdir={{ justfile_directory() }}
 
     # exit early if not in submodule
     relative="${cdir#$rootdir/}"
@@ -87,25 +87,30 @@ verify-in-submodule:
         exit 1
     fi
 
+jlpm: verify-in-submodule
+    #!/usr/bin/env bash
+    cd {{ invocation_directory() }}
+    uv run --project {{ justfile_directory() }} jlpm
+
 build: verify-in-submodule
     #!/usr/bin/env bash
-    cd {{invocation_directory()}}
-    uv run --project {{justfile_directory()}} jlpm build
+    cd {{ invocation_directory() }}
+    uv run --project {{ justfile_directory() }} jlpm build
 
 lint: verify-in-submodule
     #!/usr/bin/env bash
-    cd {{invocation_directory()}}
-    uv run --project {{justfile_directory()}} jlpm lint
+    cd {{ invocation_directory() }}
+    uv run --project {{ justfile_directory() }} jlpm lint
 
 pytest: verify-in-submodule
     #!/usr/bin/env bash
-    cd {{invocation_directory()}}
-    uv run --project {{justfile_directory()}} pytest
+    cd {{ invocation_directory() }}
+    uv run --project {{ justfile_directory() }} pytest
 
 reinstall: verify-in-submodule
     #!/usr/bin/env bash
     uv sync
-    source {{justfile_directory()}}/.venv/bin/activate
-    cd {{invocation_directory()}}
+    source {{ justfile_directory() }}/.venv/bin/activate
+    cd {{ invocation_directory() }}
     pip install -e .
     deactivate
