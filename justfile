@@ -70,7 +70,7 @@ clean:
 
 start:
     @# this always runs from the devrepo root
-    uv run jupyter lab
+    uv run jupyter lab --config={{justfile_directory()}}/jupyter_server_config.py
 
 ############################################################################
 # Local recipes that only work in a submodule
