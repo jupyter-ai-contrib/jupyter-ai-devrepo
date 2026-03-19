@@ -24,8 +24,8 @@ enable-server-extensions:
     # ${name//-/_} := name with all '-' chars replaced with '_'
     git submodule foreach '
         # Skip jupyter-chat as it is a special case
-        if [[ $name == "jupyter-chat" ]]
-            then exit 0
+        if [ "$name" = "jupyter-chat" ]; then
+            exit 0
         fi
         # Skip jupyter-ai-claude-code as it is not an extension
         if [[ $name == "jupyter-ai-claude-code" ]]
@@ -40,8 +40,8 @@ enable-lab-extensions:
     #!/usr/bin/env bash
     git submodule foreach '
         # Skip jupyter-chat as it is a special case
-        if [[ $name == "jupyter-chat" ]]
-            then exit 0
+        if [ "$name" = "jupyter-chat" ]; then
+            exit 0
         fi
         # Only enable labextension if submodule contains package.json
         if [ -f package.json ]
