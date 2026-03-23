@@ -28,8 +28,8 @@ enable-server-extensions:
             exit 0
         fi
         # Skip jupyter-ai-claude-code as it is not an extension
-        if [[ $name == "jupyter-ai-claude-code" ]]
-            then exit 0
+        if [ "$name" = "jupyter-ai-claude-code" ]; then
+            exit 0
         fi
         uv run --project .. jupyter server extension enable ${name//-/_}
     '
