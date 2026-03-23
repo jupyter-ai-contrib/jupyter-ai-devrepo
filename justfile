@@ -4,6 +4,12 @@
 sync:
     uv sync
 
+sync-refresh:
+    # required when you run into this error:
+    # No solution found when resolving dependencies for split
+    # we can conclude that your workspace's requirements are unsatisfiable.
+    uv sync --refresh
+
 pull-all:
     git submodule foreach "git switch main && git pull"
 

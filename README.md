@@ -101,6 +101,12 @@ available. This also requires restarting the JupyterLab server.
   submodules. This is run automatically by all `uv` commands so it is usually
   not necessary.
 
+- `just sync-refresh`: run `uv sync --refresh`
+
+  - Required when `uv sync` fails with: "No solution found when resolving
+  dependencies for split — we can conclude that your workspace's requirements
+  are unsatisfiable."
+
 - `just pull-all`: switch to `main` in all submodules and pull in all upstream changes
 
 - `just build-all`: build all frontend assets in every submodule
