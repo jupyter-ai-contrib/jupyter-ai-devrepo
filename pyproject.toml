@@ -9,6 +9,7 @@ dependencies = [
     "pip",
     "jupyterlab>=4",
     # all submodules
+    "jupyter_ai",
     "jupyter_server_documents",
     "jupyterlab_chat",
     "jupyter_ai_router",
@@ -30,6 +31,7 @@ dependencies = [
 ]
 
 [tool.uv.sources]
+jupyter_ai = { workspace = true }
 jupyter_server_documents = { workspace = true }
 jupyterlab_chat = { workspace = true }
 jupyter_ai_router = { workspace = true }
