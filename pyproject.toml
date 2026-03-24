@@ -16,7 +16,6 @@ dependencies = [
     "jupyter_ai_persona_manager",
     "jupyter_ai_chat_commands",
     "jupyterlab_commands_toolkit",
-    "jupyter_ai_claude_code",
     "jupyter_ai_acp_client",
     "jupyter_server_mcp",
     "jupyter_ai_tools",
@@ -46,7 +45,6 @@ jupyter_ai_magic_commands = { workspace = true }
 jupyter_ai_chat_commands = { workspace = true }
 jupyterlab_commands_toolkit = { workspace = true }
 jupyter_ai_jupyternaut = { workspace = true }
-jupyter_ai_claude_code = { workspace = true }
 jupyter_ai_acp_client = { workspace = true }
 jupyter_server_mcp = { workspace = true }
 jupyter_ai_tools = { workspace = true }

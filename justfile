@@ -30,10 +30,6 @@ enable-server-extensions:
         if [ "$name" = "jupyter-chat" ]; then
             exit 0
         fi
-        # Skip jupyter-ai-claude-code as it is not an extension
-        if [ "$name" = "jupyter-ai-claude-code" ]; then
-            exit 0
-        fi
         uv run --project .. jupyter server extension enable ${name//-/_}
     '
     # Enable jupyter-chat server extension imperatively
