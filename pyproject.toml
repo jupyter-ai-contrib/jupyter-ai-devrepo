@@ -37,6 +37,7 @@ jupyterlab_chat = { workspace = true }
 jupyter_ai_router = { workspace = true }
 jupyter_ai_persona_manager = { workspace = true }
 jupyter_ai_litellm = { workspace = true }
+jupyter_ai_magic_commands = { workspace = true }
 jupyter_ai_chat_commands = { workspace = true }
 jupyterlab_commands_toolkit = { workspace = true }
 jupyter_ai_jupyternaut = { workspace = true }

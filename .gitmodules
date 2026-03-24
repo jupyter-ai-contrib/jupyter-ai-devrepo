@@ -37,3 +37,6 @@
 [submodule "jupyter-ai"]
 	path = jupyter-ai
 	url = git@github.com:jupyterlab/jupyter-ai.git
+[submodule "jupyter-ai-magic-commands"]
+	path = jupyter-ai-magic-commands
+	url = git@github.com:jupyter-ai-contrib/jupyter-ai-magic-commands.git
