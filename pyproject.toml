@@ -8,16 +8,14 @@ dependencies = [
     # environment requirements
     "pip",
     "jupyterlab>=4",
-    # all submodules
+    # all required submodules
+    "jupyter_ai",
     "jupyter_server_documents",
     "jupyterlab_chat",
     "jupyter_ai_router",
     "jupyter_ai_persona_manager",
-    "jupyter_ai_litellm",
     "jupyter_ai_chat_commands",
     "jupyterlab_commands_toolkit",
-    "jupyter_ai_jupyternaut",
-    "jupyter_ai_claude_code",
     "jupyter_ai_acp_client",
     "jupyter_server_mcp",
     "jupyter_ai_tools",
@@ -29,16 +27,24 @@ dependencies = [
     "pytest-jupyter[server]>=0.6.0",
 ]
 
+[project.optional-dependencies]
+optional = [
+    "jupyter_ai_litellm",
+    "jupyter_ai_jupyternaut",
+    "jupyter_ai_magic_commands",
+]
+
 [tool.uv.sources]
+jupyter_ai = { workspace = true }
 jupyter_server_documents = { workspace = true }
 jupyterlab_chat = { workspace = true }
 jupyter_ai_router = { workspace = true }
 jupyter_ai_persona_manager = { workspace = true }
 jupyter_ai_litellm = { workspace = true }
+jupyter_ai_magic_commands = { workspace = true }
 jupyter_ai_chat_commands = { workspace = true }
 jupyterlab_commands_toolkit = { workspace = true }
 jupyter_ai_jupyternaut = { workspace = true }
-jupyter_ai_claude_code = { workspace = true }
 jupyter_ai_acp_client = { workspace = true }
 jupyter_server_mcp = { workspace = true }
 jupyter_ai_tools = { workspace = true }

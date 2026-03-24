@@ -1,14 +1,11 @@
 ############################################################################
 # Global recipes that work anywhere under this devrepo
 
-sync:
-    uv sync
+sync *args:
+    uv sync {{args}}
 
-sync-refresh:
-    # required when you run into this error:
-    # No solution found when resolving dependencies for split
-    # we can conclude that your workspace's requirements are unsatisfiable.
-    uv sync --refresh
+sync-all *args:
+    uv sync --extra optional {{args}}
 
 pull-all:
     git submodule foreach "git switch main && git pull"
@@ -31,10 +28,6 @@ enable-server-extensions:
     git submodule foreach '
         # Skip jupyter-chat as it is a special case
         if [ "$name" = "jupyter-chat" ]; then
-            exit 0
-        fi
-        # Skip jupyter-ai-claude-code as it is not an extension
-        if [ "$name" = "jupyter-ai-claude-code" ]; then
             exit 0
         fi
         uv run --project .. jupyter server extension enable ${name//-/_}
