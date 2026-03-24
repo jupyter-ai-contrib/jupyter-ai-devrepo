@@ -8,16 +8,14 @@ dependencies = [
     # environment requirements
     "pip",
     "jupyterlab>=4",
-    # all submodules
+    # all required submodules
     "jupyter_ai",
     "jupyter_server_documents",
     "jupyterlab_chat",
     "jupyter_ai_router",
     "jupyter_ai_persona_manager",
-    "jupyter_ai_litellm",
     "jupyter_ai_chat_commands",
     "jupyterlab_commands_toolkit",
-    "jupyter_ai_jupyternaut",
     "jupyter_ai_claude_code",
     "jupyter_ai_acp_client",
     "jupyter_server_mcp",
@@ -28,6 +26,13 @@ dependencies = [
     "pytest-asyncio",
     "pytest-cov",
     "pytest-jupyter[server]>=0.6.0",
+]
+
+[project.optional-dependencies]
+optional = [
+    "jupyter_ai_litellm",
+    "jupyter_ai_jupyternaut",
+    "jupyter_ai_magic_commands",
 ]
 
 [tool.uv.sources]

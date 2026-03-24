@@ -101,11 +101,17 @@ available. This also requires restarting the JupyterLab server.
   submodules. This is run automatically by all `uv` commands so it is usually
   not necessary.
 
-- `just sync-refresh`: run `uv sync --refresh`
-
-  - Required when `uv sync` fails with: "No solution found when resolving
+  - Pass `--refresh` if `uv sync` fails with: "No solution found when resolving
   dependencies for split — we can conclude that your workspace's requirements
   are unsatisfiable."
+
+- `just sync-all`: run `uv sync --extra optional`
+
+  - Installs optional submodules (`jupyter_ai_litellm`,
+  `jupyter_ai_jupyternaut`, `jupyter_ai_magic_commands`) in addition to the
+  required ones.
+
+  - Also accepts extra flags, e.g. `just sync-all --refresh`.
 
 - `just pull-all`: switch to `main` in all submodules and pull in all upstream changes
 
