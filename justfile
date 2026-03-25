@@ -8,7 +8,7 @@ sync-all *args:
     uv sync --extra optional {{args}}
 
 pull-all:
-    git submodule foreach "git switch main && git pull"
+    git submodule foreach -q 'echo $sm_path' | xargs -P 100 -I{} sh -c 'cd {} && git switch main -q && git pull -q'
 
 build-all:
     #!/usr/bin/env bash
