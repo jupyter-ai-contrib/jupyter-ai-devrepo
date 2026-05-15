@@ -118,9 +118,9 @@ clean:
     -rm *.qasm 2>/dev/null
     -rm *.ipynb 2>/dev/null
 
-start:
+start *args:
     @# this always runs from the devrepo root
-    uv run jupyter lab --config={{justfile_directory()}}/jupyter_server_config.py
+    uv run jupyter lab --config={{justfile_directory()}}/jupyter_server_config.py {{args}}
 
 ############################################################################
 # Local recipes that only work in a submodule
@@ -137,10 +137,10 @@ verify-in-submodule:
         exit 1
     fi
 
-jlpm: verify-in-submodule
+jlpm *args: verify-in-submodule
     #!/usr/bin/env bash
     cd {{ invocation_directory() }}
-    uv run --project {{ justfile_directory() }} jlpm
+    uv run --project {{ justfile_directory() }} jlpm {{args}}
 
 build: verify-in-submodule
     #!/usr/bin/env bash
